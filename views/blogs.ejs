@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="">
+      <div class="">
+        <p>Blogging is a way of sharing your thoughts, experiences, or opinions online.</p>
+        <h2>Why start blogging?</h2>
+        <p>Gone are the days when one would refer to wikipedia or similar old sites to get information on a particular topic. Now, everyone loves to read personal experiences and solutions that have actually helped people to solve their problems, provide wholesome solutions to their problems and casual journaling and opinion sharing. </p>
+        <h4>And it really is as awesome as it sounds!</h4>
+      </div>
+    </div>
+    <div class="">
+      <%  posts.forEach(function(post){ %>
+        <h1><%=post.title%></h1>
+        <p>
+          <%=post.content.substring(0, 100) + " ..."%>
+        </p>
+    <% }) %>
+    </div>
+
+
+  </body>
+</html>
