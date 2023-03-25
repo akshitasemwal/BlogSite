@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Posts</title>
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <button type="button" ><a href="/index">HOME</a></button>
+        <button type="button" ><a href="/compose">COMPOSE</a></button>
+      </ul>
+    </div>
+    <div class="card">
+      <%  posts.forEach(function(post){ %>
+        <div class="post">
+          <h3 class="card-title"><%=post.title%></h1>
+          <p class="card-text">
+            <%= post.content %>
+            <a href="/posts/<%=post._id%>">Read More</a>
+          </p>
+        </div>
+      <% }); %>
+    </div>
+  </body>
+</html>

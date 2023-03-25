@@ -6,22 +6,30 @@
     <title>blog</title>
   </head>
   <body>
+
     <div class="subform">
+      <div class="mag">
+        <span class="vertical-bar" style=" margin-top: 0; margin-left: 0;"><h1>SQUIGGLE</h1></span>
+      </div>
         <form action="/compose" method="post">
           <div class="title">
-            <label style="padding: 3px;" for="tt">TITLE</label>
-            <textarea name="postTitle" id="tt" rows="1" cols="50" placeholder="Enter the title"></textarea>
+            <label for="tt">TITLE</label>
+            <br>
+            <textarea style="font-size: 2rem;" name="postTitle" id="tt" rows="1" cols="52" placeholder="Enter the title"></textarea>
           </div>
           <br><hr><br>
           <div class="content">
             <label for="cont">CONTENT</label>
-            <textarea name="postContent" id="cont" rows="1" cols="50" placeholder="Type your story"></textarea>
+            <br>
+            <textarea style="font-size: 1.25rem;" name="postContent" id="cont" rows="4" cols="85" placeholder="Type your story"></textarea>
           </div>
           <br>
           <div class="bt">
-            <button name="button">PUBLISH</button>
+            <button name="button" style="top: 2rem; right: 20rem;">PUBLISH</button>
           </div>
         </form>
+        <button type="button" style="top: 2rem; right: 11rem;"><a href="/index">HOME</a></button>
+        <button type="button" style="top: 2rem; right: 2rem;"><a href="/posts">POSTS</a></button>
     </div>
   </body>
 </html>

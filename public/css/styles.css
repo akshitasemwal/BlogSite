@@ -2,10 +2,15 @@
   margin: 0;
 }
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
 /* index.ejs styling */
 
 .blog{
-  background-color: #F8F998;
+  /* background-color: #F8F998; */
   width: 100%;
   height: 100%;
   margin: 0px 0px;
@@ -41,43 +46,6 @@
   font-size: 18px;
 }
 
-.blog span{
-  position: relative;
-  margin-left: 50%;
-  margin-top: 175px;
-  font-size: 35px;
-  color: grey;
-}
-
-/* compose.ejs styling */
-
-.subform{
-  align-content: center;
-  padding: 15%;
-}
-
-textarea{
-  border-color: white;
-}
-
-textarea:focus {
-  border-color: white;
-  border-width: 0px;
-  background-color: pink;
-}
-
-.subform #tt{
-  font-size: 28px;
-}
-
-.subform button{
-  background-color: #FF9E9E;
-  color: black;
-  border-radius: 18px;
-  padding: 10px;
-  width: 120px;
-}
-
 /* vertical bar styling */
 
 .vertical-bar{
@@ -99,4 +67,125 @@ textarea:focus {
   font-family: serif;
   display: inline-block;
   text-align: center;
+}
+
+.mag{
+  display: inline-block;
+  width: 5rem;
+}
+
+/* compose.ejs styling */
+
+.subform form{
+  align-content: center;
+  padding: 15%;
+  position: absolute;
+}
+
+textarea{
+  border-color: white;
+}
+
+textarea:focus {
+  border-color: white;
+  border-width: 0px;
+  border: 0;
+  background-color: #C0EEE4;
+}
+
+textarea:focus::placeholder{
+  color: #C0EEE4;
+}
+
+textarea:focus::border{
+  width: 0px;
+}
+
+.subform button{
+  background-color: #FFCAC8;
+  position: fixed;
+  color: black;
+  border-radius: 18px;
+  padding: 0.5rem;
+  width: 7rem;
+  height: 2.75rem;
+}
+
+.subform button:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* styling blogs page */
+
+.card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.post{
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  padding: 1rem;
+  width: 16rem;
+  height: 12rem;
+  font-family: 'Aileron';
+  font-weight: 400;
+  src: url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Roboto-Regular.ttf);
+}
+
+.post .card-title{
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.post .card-text {
+  margin: 10px 0;
+}
+
+.post:hover{
+  width: 16.5rem;
+  height: 12.5rem;
+}
+
+.post hr{
+  border: dotted grey 6px;
+  border-bottom: none;
+  width: 4%;
+  text-align: center;
+}
+
+.nav {
+  height: 6rem;
+}
+
+.nav button{
+  background-color: #FFCAC8;
+  color: black;
+  border-radius: 18px;
+  padding: 0.5rem;
+  width: 7rem;
+  height: 2.75rem;
+  margin: 1.5rem;
+}
+
+.nav button:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
 }
