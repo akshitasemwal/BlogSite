@@ -10,7 +10,7 @@ a{
 /* index.ejs styling */
 
 .blog{
-  /* background-color: #F8F998; */
+  background-color: #F8F998;
   width: 100%;
   height: 100%;
   margin: 0px 0px;
@@ -20,7 +20,7 @@ a{
 .blog h1{
   position: relative;
   font-family: 'Cinzel', serif;
-  font-size: 80px;
+  font-size: 6rem;
   margin-top: 0;
   margin-right: 0;
   display: inline-block;
@@ -44,6 +44,12 @@ a{
 .blog #compose:hover, #read:hover{
   cursor: pointer;
   font-size: 18px;
+}
+
+.main{
+  float: right;
+  margin-right: 40%;
+  margin-top: 8%;
 }
 
 /* vertical bar styling */
@@ -76,9 +82,15 @@ a{
 
 /* compose.ejs styling */
 
+.subform{
+  float: right;
+  margin-right: 90%;
+  margin-top: 7%;
+}
+
 .subform form{
   align-content: center;
-  padding: 15%;
+  padding: 5%;
   position: absolute;
 }
 
@@ -109,6 +121,7 @@ textarea:focus::border{
   padding: 0.5rem;
   width: 7rem;
   height: 2.75rem;
+  font-weight: bolder;
 }
 
 .subform button:hover{
@@ -124,6 +137,8 @@ textarea:focus::border{
   justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
+  padding: 3.75rem;
+  padding-top: 0;
 }
 
 .post{
@@ -131,7 +146,7 @@ textarea:focus::border{
   border-radius: 5px;
   box-sizing: border-box;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 10px;
+  margin: 1rem;
   padding: 1rem;
   width: 16rem;
   height: 12rem;
@@ -152,13 +167,6 @@ textarea:focus::border{
 .post:hover{
   width: 16.5rem;
   height: 12.5rem;
-}
-
-.post hr{
-  border: dotted grey 6px;
-  border-bottom: none;
-  width: 4%;
-  text-align: center;
 }
 
 .nav {

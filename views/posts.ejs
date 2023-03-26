@@ -8,7 +8,7 @@
   <body>
     <div class="nav">
       <ul>
-        <button type="button" ><a href="/index">HOME</a></button>
+        <button type="button" ><a href="/">HOME</a></button>
         <button type="button" ><a href="/compose">COMPOSE</a></button>
       </ul>
     </div>
@@ -16,10 +16,8 @@
       <%  posts.forEach(function(post){ %>
         <div class="post">
           <h3 class="card-title"><%=post.title%></h1>
-          <p class="card-text">
-            <%= post.content %>
-            <a href="/posts/<%=post._id%>">Read More</a>
-          </p>
+          <p class="card-text"><%=post.content%></p>
+          <a href="/posts/<%=post._id%>">Read More</a>
         </div>
       <% }); %>
     </div>
