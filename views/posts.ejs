@@ -15,9 +15,11 @@
     <div class="card">
       <%  posts.forEach(function(post){ %>
         <div class="post">
-          <h3 class="card-title"><%=post.title%></h1>
+          <h3 class="card-title" style="display:inline-block"><%=post.title%></h1>
+          <button type="submit" name="button" style="float: right;">DEL</button>
+            <hr>
           <p class="card-text"><%=post.content%></p>
-          <a href="/posts/<%=post._id%>">Read More</a>
+          <a href="/posts/<%=post._id%>" style="color: darkblue; text-decoration: underline;">Read More</a>
         </div>
       <% }); %>
     </div>

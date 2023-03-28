@@ -32,15 +32,13 @@ app.post("/compose", function(req, res){
     title: req.body.postTitle,
     content: req.body.postBody
   });
-  post.save()
-  .then(() => {
+  post.save().then(() => {
     res.redirect('posts');
   })
   .catch((err) => {
     console.error(err);
   });
 });
-
 
 app.get("/posts", function(req, res){
   Post.find({}).then(posts => {
@@ -50,18 +48,44 @@ app.get("/posts", function(req, res){
   });
 });
 
-
 app.get("/posts/:postId", function(req, res){
 const requestedPostId = req.params.postId;
 
 Post.findOne({_id: requestedPostId}).then(post =>{
   res.render("post", {
     title: post.title,
-    content: post.content
+    content: post.content,
+    _id: requestedPostId
     });
   });
 
 });
+
+// app.patch("/posts/:postId", function(req, res){
+//   const requestedPostId = req.params.postId;
+//   Post.findByIdAndUpdate(requestedPostId, req.body, {new: true}).then(post)=>{
+//     if(!blog)
+//     {
+//       alert("error");
+//     }
+//     else {
+//       res.send(post);
+//     }
+//   }
+// });
+
+app.delete("/posts/:postId", function(req, res) {
+  const requestedPostId = req.params.postId;
+  Post.findByIdAndDelete(requestedPostId, (err, result) => {
+    if (err) {
+      console.error(err);
+      res.sendStatus(500);
+    } else {
+      res.redirect('posts');
+    }
+  });
+});
+
 
 app.listen(3000, function(req, res){
   console.log("server started on channel 3000");

@@ -164,6 +164,15 @@ textarea:focus::border{
   margin: 10px 0;
 }
 
+.post button{
+  background-color: red;
+  color: white;
+  padding:0.2rem 0.5rem;
+  border-radius: 8px;
+  border-width: thin;
+  border-color: white;
+}
+
 .post:hover{
   width: 16.5rem;
   height: 12.5rem;
@@ -196,4 +205,22 @@ textarea:focus::border{
   display: flex;
   justify-content: flex-end;
   height: 100%;
+}
+
+.blog-post{
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 1rem;
+  padding: 2rem;
+  width: 90%;
+  height: 90%;
+  font-family: 'Aileron';
+  font-weight: 400;
+  src: url(chrome-extension://pefhciejnkgdgoahgfeklebcbpmhnhhd/font/Roboto-Regular.ttf);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
