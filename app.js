@@ -10,14 +10,17 @@ app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
-mongoose.connect("mongodb://127.0.0.1:27017/blogSiteDB", {useNewUrlParser: true});
+mongoose.connect("mongodb://127.0.0.1:27017/blogSiteDB", {useNewUrlParser: true})
+.then(()=>{
+  console.log("connection successful!");
+});
 
-const postSchema = {
+const postSchema = {     //schema
   title: String,
   content: String
 };
 
-const Post = mongoose.model("Post", postSchema);
+const Post = mongoose.model("Post", postSchema);     //model
 
 app.get("/", function(req, res){
   res.render("index");
@@ -28,14 +31,14 @@ app.get("/compose", function(req, res){
 });
 
 app.post("/compose", function(req, res){
-  const post = new Post({
+  const post = new Post({                            //object
     title: req.body.postTitle,
     content: req.body.postBody
   });
-  post.save().then(() => {
+
+  post.save().then((post) => {
     res.redirect('posts');
-  })
-  .catch((err) => {
+  }).catch((err) => {
     console.error(err);
   });
 });
@@ -74,7 +77,7 @@ Post.findOne({_id: requestedPostId}).then(post =>{
 //   }
 // });
 
-app.delete("/posts/:postId", function(req, res) {
+app.delete("/posts/:postId", (req, res) => {
   const requestedPostId = req.params.postId;
   Post.findByIdAndDelete(requestedPostId, (err, result) => {
     if (err) {
@@ -85,7 +88,6 @@ app.delete("/posts/:postId", function(req, res) {
     }
   });
 });
-
 
 app.listen(3000, function(req, res){
   console.log("server started on channel 3000");

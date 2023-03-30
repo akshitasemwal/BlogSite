@@ -13,10 +13,13 @@
       </ul>
     </div>
     <div class="card">
-      <%  posts.forEach(function(post){ %>
+      <% posts.forEach(function(post){ %>
         <div class="post">
           <h3 class="card-title" style="display:inline-block"><%=post.title%></h1>
-          <button type="submit" name="button" style="float: right;">DEL</button>
+            <form class="" action="/posts/<%= post._id %>" method="DELETE" style="float: right;">
+              <button type="submit" name="button">DEL</button>
+            </form>
+
             <hr>
           <p class="card-text"><%=post.content%></p>
           <a href="/posts/<%=post._id%>" style="color: darkblue; text-decoration: underline;">Read More</a>
