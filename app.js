@@ -85,6 +85,25 @@ app.get("/edit/:postId", function(req, res){
     });
 });
 
+app.post("/edit/:postId", function(req, res){
+  const requestedPostId = req.params.postId;
+  const updatedPost = {
+    title: req.body.postTitle,
+    content: req.body.postBody
+  };
+  Post.findByIdAndUpdate(requestedPostId, updatedPost, {new: true})
+    .then((post) => {
+      if(!post) {
+        res.status(404).send("Post not found");
+      } else {
+        res.redirect("/posts");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).send(err);
+    });
+});
 
 app.get("/delete/:postId", function(req, res) {
   const requestedPostId = req.params.postId;

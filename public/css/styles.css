@@ -140,7 +140,7 @@ textarea:focus::border{
   padding-top: 0;
   float: right;
   margin-top: 6rem;
-  align-self:baseline;
+  align-self: baseline;
 }
 
 .post{

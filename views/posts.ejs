@@ -15,16 +15,13 @@
         <button type="button" ><a href="/compose">COMPOSE</a></button>
       </ul>
     </div>
-    <div class="mag">
-      <span class="vertical-bar" style=" margin-top: 0; margin-left: 0;"><h1>SQUIGGLE</h1></span>
-    </div>
     <div class="card">
       <% posts.forEach(function(post){ %>
         <div class="post">
           <h3 class="card-title" style="display:inline-block"><%=post.title%></h1>
             <div style="float: right">
-              <a href="/update/<%= post._id %>" title="Edit post"><span style="float: left; color: "navyblue";" class="material-symbols-outlined">edit</span></a>
-              <a href="/delete/<%= post._id %>" title="Delete post"><span style="color: red;float: right;" class="material-symbols-outlined">delete</span></a>
+              <a href="/edit/<%= post._id %>" title="Edit post"><span style="float: left; color: "navyblue";" class="material-symbols-outlined">edit</span></a>
+              <a href="/delete/<%= post._id %>" title="Delete post"><span style="color: red; float: right;" class="material-symbols-outlined">delete</span></a>
             </div>
             <hr>
           <p class="card-text"><%=post.content%></p>
