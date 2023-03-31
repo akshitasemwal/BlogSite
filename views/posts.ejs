@@ -4,22 +4,28 @@
     <meta charset="utf-8">
     <title>Posts</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   </head>
   <body>
+
     <div class="nav">
       <ul>
         <button type="button" ><a href="/">HOME</a></button>
         <button type="button" ><a href="/compose">COMPOSE</a></button>
       </ul>
     </div>
+    <div class="mag">
+      <span class="vertical-bar" style=" margin-top: 0; margin-left: 0;"><h1>SQUIGGLE</h1></span>
+    </div>
     <div class="card">
       <% posts.forEach(function(post){ %>
         <div class="post">
           <h3 class="card-title" style="display:inline-block"><%=post.title%></h1>
-            <form class="" action="/posts/<%= post._id %>" method="DELETE" style="float: right;">
-              <button type="submit" name="button">DEL</button>
-            </form>
-
+            <div style="float: right">
+              <a href="/update/<%= post._id %>" title="Edit post"><span style="float: left; color: "navyblue";" class="material-symbols-outlined">edit</span></a>
+              <a href="/delete/<%= post._id %>" title="Delete post"><span style="color: red;float: right;" class="material-symbols-outlined">delete</span></a>
+            </div>
             <hr>
           <p class="card-text"><%=post.content%></p>
           <a href="/posts/<%=post._id%>" style="color: darkblue; text-decoration: underline;">Read More</a>

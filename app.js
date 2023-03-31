@@ -64,29 +64,38 @@ Post.findOne({_id: requestedPostId}).then(post =>{
 
 });
 
-// app.patch("/posts/:postId", function(req, res){
-//   const requestedPostId = req.params.postId;
-//   Post.findByIdAndUpdate(requestedPostId, req.body, {new: true}).then(post)=>{
-//     if(!blog)
-//     {
-//       alert("error");
-//     }
-//     else {
-//       res.send(post);
-//     }
-//   }
-// });
-
-app.delete("/posts/:postId", (req, res) => {
+app.get("/edit/:postId", function(req, res){
   const requestedPostId = req.params.postId;
-  Post.findByIdAndDelete(requestedPostId, (err, result) => {
-    if (err) {
-      console.error(err);
-      res.sendStatus(500);
-    } else {
-      res.redirect('posts');
-    }
-  });
+  console.log(requestedPostId);
+  Post.findByIdAndUpdate(requestedPostId, req.body, {new: true})
+    .then((post) => {
+      if(!post) {
+        alert("error");
+      } else {
+        res.render("update", {
+          title: post.title,
+          content: post.content,
+          _id: requestedPostId
+        });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).send(err);
+    });
+});
+
+
+app.get("/delete/:postId", function(req, res) {
+  const requestedPostId = req.params.postId;
+  Post.findByIdAndDelete(requestedPostId)
+    .then(() => {
+      res.redirect('/posts');
+    })
+    .catch((err) => {
+      console.log(err);
+      res.redirect('/posts');
+    });
 });
 
 app.listen(3000, function(req, res){
