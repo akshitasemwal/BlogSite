@@ -46,6 +46,11 @@ a{
   font-size: 18px;
 }
 
+.blog #compose{
+  background-color: black;
+  color: #F8F998;
+}
+
 .main{
   float: right;
   margin-right: 40%;
